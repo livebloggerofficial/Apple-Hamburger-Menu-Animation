@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.menu-container,
+.menu-container * {
+  box-sizing: border-box;
+}
+
+.menu-container {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-container .line {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  transition: transform 300ms ease-in-out;
+}
+
+.menu-container .line-inner {
+  height: 4px;
+  width: 32px;
+  background: #222;
+  border-radius: 4px;
+  position: absolute;
+  transition: transform 200ms ease-in-out;
+  transition-delay: 200ms;
+}
+
+.menu-container .line-inner-1 {
+  top: 12px;
+  transform: translateY(-5px);
+}
+
+.menu-container .line-inner-2 {
+  bottom: 12px;
+  transform: translateY(5px);
+}
+
+.menu-container.active .line-1 {
+  transform: rotateZ(45deg);
+}
+
+.menu-container.active .line-2 {
+  transform: rotateZ(-45deg);
+}
+
+.menu-container.active .line-inner {
+  transform: none;
+  transition: transform 200ms ease-in-out;
+}
+
+.menu-container.active .line {
+  transition-delay: 200ms;
+}
